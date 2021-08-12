@@ -49,3 +49,8 @@
 {{- $source := $cdn.animateCSS | default "lib/animate/animate.min.css" -}}
 {{- $style := dict "Source" $source "Fingerprint" $fingerprint -}}
 {{- partial "plugin/style.html" $style -}}
+
+{{- if .Params.tikz -}}
+    <script src="{{ .Site.BaseURL }}/tikzjax.js"></script>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/fonts.css" />
+{{- end -}}
